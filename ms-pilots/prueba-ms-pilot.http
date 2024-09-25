@@ -1,0 +1,26 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+
+GET localhost:8081/pilots/getPilots
+
+###
+
+
+GET localhost:8081/pilots/getPilot/1
+
+###
+
+POST localhost:8081/pilots/savePilot
+Content-Type: application/json
+
+{
+  "name": "Piloto 1",
+  "lastname": "Apellido 1",
+  "dni": "67666666",
+  "address": "Siempre viva 123",
+  "city": "Springfield",
+  "country": "Estados juntos"
+}
