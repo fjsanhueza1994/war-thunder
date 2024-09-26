@@ -17,8 +17,10 @@ public class Aircraft {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     private String model;
+    private String registration;
     private String manufacturer;
     private int year;
     private int seats;
+    private int flyingHours;
 
 }
