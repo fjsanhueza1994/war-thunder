@@ -21,6 +21,7 @@ public class Aircraft {
     private String manufacturer;
     private int year;
     private int seats;
+    @Column(name = "flying_hours")
     private int flyingHours;
 
 }
