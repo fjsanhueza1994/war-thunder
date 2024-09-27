@@ -1,0 +1,21 @@
+
+
+GET localhost:8082/aircrafts/getAircrafts
+
+###
+
+GET localhost:8082/aircrafts/getAircraft/1
+
+###
+
+POST localhost:8082/aircrafts/saveAircraft
+Content-Type: application/json
+
+{
+    "model": "F16D Fighting Falcon",
+    "registration": "CWQ-123",
+    "manufacturer": "Lockheed Martin",
+    "year": 2021,
+    "seats": 1,
+    "flying_hours": 100
+}
