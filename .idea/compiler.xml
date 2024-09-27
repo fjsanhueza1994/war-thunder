@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="asdf" />
+        <module name="ms-aircrafts" />
+        <module name="ms-commons" />
         <module name="ms-pilots" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="asdf" options="-parameters" />
+      <module name="ms-aircrafts" options="-parameters" />
+      <module name="ms-commons" options="-parameters" />
       <module name="ms-pilots" options="-parameters" />
     </option>
   </component>
