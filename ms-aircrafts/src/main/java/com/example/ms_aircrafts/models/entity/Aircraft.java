@@ -10,7 +10,8 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "aircraft")
+@Entity
+@Table(name = "aircraft")
 public class Aircraft {
 
     @Id
@@ -19,7 +20,8 @@ public class Aircraft {
     private String model;
     private String registration;
     private String manufacturer;
-    private int year;
+    @Column(name = "manufactured_year")
+    private int manufacturedYear;
     private int seats;
     @Column(name = "flying_hours")
     private int flyingHours;
