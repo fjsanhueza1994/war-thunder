@@ -1,6 +1,6 @@
 package com.example.ms_pilots.services;
 
-import com.example.ms_pilots.models.entity.Pilot;
+import com.example.ms_commons.models.entity.Pilot;
 
 import java.util.List;
 
