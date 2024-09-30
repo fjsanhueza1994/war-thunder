@@ -2,7 +2,7 @@ package com.example.ms_aircrafts.services;
 
 import java.util.List;
 
-import com.example.ms_aircrafts.models.entity.Aircraft;
+import com.example.ms_commons.models.entity.Aircraft;
 
 public interface AircraftService {
 

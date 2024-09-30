@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ms_aircrafts.models.dao.AircraftDao;
-import com.example.ms_aircrafts.models.entity.Aircraft;
+import com.example.ms_commons.models.entity.Aircraft;
 import com.example.ms_aircrafts.services.AircraftService;
 
 @Service
