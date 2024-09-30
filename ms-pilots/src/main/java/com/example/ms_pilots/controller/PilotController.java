@@ -1,6 +1,6 @@
 package com.example.ms_pilots.controller;
 
-import com.example.ms_commons.models.entity.Pilot;
+import com.example.ms_pilots.models.entity.Pilot;
 import com.example.ms_pilots.services.PilotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
