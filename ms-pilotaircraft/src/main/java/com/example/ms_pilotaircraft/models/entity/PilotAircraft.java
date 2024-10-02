@@ -2,6 +2,7 @@ package com.example.ms_pilotaircraft.models.entity;
 
 import com.example.ms_commons.models.entity.Aircraft;
 import com.example.ms_commons.models.entity.Pilot;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -16,12 +17,17 @@ public class PilotAircraft implements Serializable {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "pilot_id", referencedColumnName = "id")
+    @JoinColumn(name = "pilot_id", referencedColumnName = "id", nullable = false)
+    @JsonProperty("pilot")
     private Pilot pilot;
 
     @OneToOne
-    @JoinColumn(name = "aircraft_id", referencedColumnName = "id")
+    @JoinColumn(name = "aircraft_id", referencedColumnName = "id", nullable = false)
+    @JsonProperty("aircraft")
     private Aircraft aircraft;
+
+    public PilotAircraft() {
+    }
 
     // Getters and setters
     public Long getId() {
