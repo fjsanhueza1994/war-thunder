@@ -1,5 +1,6 @@
 package com.example.ms_commons.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,9 +21,14 @@ public class Aircraft implements Serializable {
     private String model;
     private String registration;
     private String manufacturer;
+
+    @JsonProperty("manufactured_year")
     @Column(name = "manufactured_year")
     private int manufacturedYear;
+
     private int seats;
+
+    @JsonProperty("flying_hours")
     @Column(name = "flying_hours")
     private int flyingHours;
 

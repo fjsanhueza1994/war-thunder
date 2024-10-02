@@ -1,5 +1,6 @@
 package com.example.ms_commons.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +19,8 @@ public class Pilot implements Serializable {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     private String name;
+
+    @JsonProperty("last_name")
     @Column(name = "last_name")
     private String lastName;
     private String dni;
