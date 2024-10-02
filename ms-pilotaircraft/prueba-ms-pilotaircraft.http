@@ -1,0 +1,15 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+### @PostMapping("/assign/{idPilot}/{idAircraft}")
+POST localhost:8083/pilotaircraft/assign/12/10
+
+
+
+### @GetMapping("/getPilotAircraft/{id}")
+GET localhost:8083/pilotaircraft/getPilotAircraft/1
+
+### @DeleteMapping("/unassign/{id}")
+DELETE localhost:8083/pilotaircraft/unassign/2

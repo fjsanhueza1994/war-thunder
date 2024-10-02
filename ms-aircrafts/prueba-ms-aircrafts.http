@@ -12,10 +12,10 @@ POST localhost:8082/aircrafts/saveAircraft
 Content-Type: application/json
 
 {
-    "model": "F16D Fighting Falcon",
-    "registration": "CWQ-123",
+    "model": "F35 Lightning II",
+    "registration": "CWQ-70",
     "manufacturer": "Lockheed Martin",
-    "year": 2021,
+    "manufactured_year": 2024,
     "seats": 1,
-    "flying_hours": 100
+    "flying_hours": 1
 }

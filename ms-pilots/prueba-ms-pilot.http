@@ -17,10 +17,10 @@ POST localhost:8081/pilots/savePilot
 Content-Type: application/json
 
 {
-  "name": "Piloto 1",
-  "lastname": "Apellido 1",
-  "dni": "67666666",
-  "address": "Siempre viva 123",
-  "city": "Springfield",
-  "country": "Estados juntos"
+  "name": "Rey Pancho",
+  "last_name": "Sanhueza",
+  "dni": "18.787.573-0",
+  "address": "Juan Pablo II #901",
+  "city": "La Serena",
+  "country": "Chile"
 }
