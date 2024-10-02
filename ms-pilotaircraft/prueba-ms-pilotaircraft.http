@@ -4,7 +4,7 @@ GET https://examples.http-client.intellij.net/get
 
 ###
 ### @PostMapping("/assign/{idPilot}/{idAircraft}")
-POST localhost:8083/pilotaircraft/assign/12/10
+POST localhost:8083/pilotaircraft/assign/5/2
 
 
 
@@ -13,3 +13,9 @@ GET localhost:8083/pilotaircraft/getPilotAircraft/1
 
 ### @DeleteMapping("/unassign/{id}")
 DELETE localhost:8083/pilotaircraft/unassign/2
+
+###
+POST localhost:8083/pilotaircraft/unassignedPilots
+
+###
+POST localhost:8083/pilotaircraft/unassignedAircrafts

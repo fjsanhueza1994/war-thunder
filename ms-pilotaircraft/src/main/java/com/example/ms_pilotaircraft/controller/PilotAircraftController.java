@@ -2,6 +2,7 @@ package com.example.ms_pilotaircraft.controller;
 
 import com.example.ms_commons.models.entity.Aircraft;
 import com.example.ms_commons.models.entity.Pilot;
+import com.example.ms_pilotaircraft.models.dao.PilotAircraftDao;
 import com.example.ms_pilotaircraft.models.dto.AssignPilotAircraftResponse;
 import com.example.ms_pilotaircraft.models.entity.PilotAircraft;
 import com.example.ms_pilotaircraft.services.PilotAircraftService;
@@ -11,6 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
+
+import java.util.List;
 
 
 @RestController
@@ -18,7 +24,9 @@ import org.springframework.web.client.RestTemplate;
 public class PilotAircraftController {
 
     private final PilotAircraftService pilotAircraftService;
+    private final PilotAircraftDao pilotAircraftDao;
     private final RestTemplate restTemplate;
+    private final WebClient webClient;
 
     @Value("${pilotaircraft.services.pilots}")
     private String pilotsServiceUrl;
@@ -28,9 +36,13 @@ public class PilotAircraftController {
 
     @Autowired
     public PilotAircraftController(PilotAircraftService pilotAircraftService,
-                                   RestTemplate restTemplate) {
+                                   RestTemplate restTemplate,
+                                   WebClient.Builder webClientBuilder,
+                                   PilotAircraftDao pilotAircraftDao) {
         this.pilotAircraftService = pilotAircraftService;
+        this.pilotAircraftDao = pilotAircraftDao;
         this.restTemplate = restTemplate;
+        this.webClient = webClientBuilder.baseUrl("http://localhost").build();
     }
 
     @PostMapping("/assign/{idPilot}/{idAircraft}")
@@ -122,4 +134,25 @@ public class PilotAircraftController {
         }
     }
 
+    @PostMapping("/unassignedPilots")
+    public Mono<List<Pilot>> getUnassignedPilots() {
+        return webClient.get()
+                .uri("http://localhost:8081/pilots/getPilots") // Llamada al microservicio ms-pilots
+                .retrieve()
+                .bodyToFlux(Pilot.class)
+                .filterWhen(pilot -> Mono.fromCallable(() -> !pilotAircraftDao.existsByPilotId(pilot.getId()))
+                        .subscribeOn(Schedulers.boundedElastic())) // Verificación reactiva
+                .collectList(); // Retorna la lista de pilotos no asignados
+    }
+
+    @PostMapping("/unassignedAircrafts")
+    public Mono<List<Aircraft>> getUnassignedAircrafts() {
+        return webClient.get()
+                .uri("http://localhost:8082/aircrafts/getAircrafts") // Llamada al microservicio ms-aircrafts
+                .retrieve()
+                .bodyToFlux(Aircraft.class)
+                .filterWhen(aircraft -> Mono.fromCallable(() -> !pilotAircraftDao.existsByAircraftId(aircraft.getId()))
+                        .subscribeOn(Schedulers.boundedElastic())) // Verificación reactiva
+                .collectList(); // Retorna la lista de aviones no asignados
+    }
 }
