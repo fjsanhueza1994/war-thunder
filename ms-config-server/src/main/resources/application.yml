@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    consul:
+      host: localhost  # Direccion de Consul
+      port: 8500       # Puerto de Consul
+      config:
+        enabled: true   # Habilitar la integracion con Consul
+        format: yaml    # El formato de los archivos puede ser `yaml`, `properties` o `json`
+        data-key: config # Ruta en Consul para las configuraciones
+        default-context: application  # Contexto predeterminado
+        profile-separator: ','        # Separador de perfiles
+
+  application:
+    name: ms-config-server
