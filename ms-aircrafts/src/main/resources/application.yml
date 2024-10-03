@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-aircrafts
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true # Para evitar problemas con nombres de host
+        health-check-interval: 10s # Intervalo para verificar la salud del servicio
+        register-health-check: true
+      config:
+        enabled: true
+        format: yaml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/war_thunder_db
+    username: war_thunder_user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8082
