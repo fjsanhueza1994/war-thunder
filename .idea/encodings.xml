@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ms-aircrafts/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms-pilotaircraft/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms-pilots/src/main/java" charset="UTF-8" />
   </component>

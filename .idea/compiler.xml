@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms-pilotaircraft" />
+        <module name="ms-config-server" />
         <module name="ms-aircrafts" />
         <module name="ms-commons" />
         <module name="ms-pilots" />
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ms-aircrafts" options="-parameters" />
       <module name="ms-commons" options="" />
+      <module name="ms-config-server" options="-parameters" />
       <module name="ms-pilotaircraft" options="-parameters" />
       <module name="ms-pilots" options="-parameters" />
     </option>

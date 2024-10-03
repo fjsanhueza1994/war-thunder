@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/ms-aircrafts/pom.xml" />
         <option value="$PROJECT_DIR$/ms-commons/pom.xml" />
         <option value="$PROJECT_DIR$/ms-pilotaircraft/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-config-server/pom.xml" />
       </list>
     </option>
   </component>
